@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import "./App.css"
 
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
@@ -9,16 +10,17 @@ import LibraryPage from "./pages/LibraryPage";
 import ProfilePage from "./pages/ProfilePage";
 import StoriesPage from "./pages/StoriesPage";
 import StatsPage from "./pages/StatsPage";
+import Footer from "./components/Footer";
 
 function App() {
 
   return (
     
-    <div className='max-w-screen'>
+    <div className='max-w-screen flex flex-col relative'>
       <nav>
         <Navbar />
       </nav>
-      <main className="w-full h-screen border">
+      <main className="w-full">
         <Routes>
           <Route path="/" element={<LandingPage />} />  {/*Contains Landing page - Introduction to the platform and sign-up links*/}
           <Route path="/home" element={<HomePage />} />     {/*Contains For-you page - all the content is pulled here to be consumed*/}
@@ -31,8 +33,8 @@ function App() {
           <Route path="/stats" element={<StatsPage />} />  {/*Contains statistical data about your follower counts, subscribers, views and reads story-wise*/}
         </Routes>
       </main>
-      <footer className="w-full h-[10vh] flex justify-center items-center border">
-        This is the footer of the website.
+      <footer className="w-full h-[10vh]">
+        <Footer />
       </footer>
     </div>
   )
