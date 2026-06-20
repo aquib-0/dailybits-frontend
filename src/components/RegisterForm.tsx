@@ -1,4 +1,7 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { useAuth } from "../context/AuthContext";
 
 const RegisterForm = () => {
   type formValue = {
@@ -17,8 +20,29 @@ const RegisterForm = () => {
     });
     const {register, handleSubmit, formState} = form;
     const {errors} = formState;
-    const onSubmit = (data: formValue)=>{
-      console.log(data);
+    const onSubmit = async(data: formValue)=>{
+      const {register} = useAuth();
+      const navigate = useNavigate();
+      try{
+        await register(data);
+
+        navigate("/home");
+      } catch(error: any)
+      {
+        alert(error.message);
+      }
+      
+      // console.log(data);
+      // const res = await fetch("http://localhost:5000/api/auth/register", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(data)
+      // });
+
+      // const result = await res.json();
+      // console.log(result);
     }
     return (
       <div className="w-full flex justify-center">

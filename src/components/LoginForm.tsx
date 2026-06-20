@@ -1,36 +1,49 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const LoginForm = () => {
-  type formValue = {
-    username: String,
+export type formValue = {
     email: String,
     password: String
   };
+const LoginForm = () => {
+  const {login} = useAuth();
+  const navigate = useNavigate();
+
   const form = useForm<formValue>({
     defaultValues: {
-      username: "",
       email: "",
       password: ""
     }
   });
   const {register, handleSubmit, formState} = form;
   const {errors} = formState;
-  const onSubmit = (data: formValue)=>{
-    console.log(data);
-  }
+
+  const onSubmit = async(data: formValue)=>{
+    try{
+      console.log(data);
+      await login(data);
+
+      navigate('/home');
+    } catch(error: any)
+    {
+      alert(error.message);
+    }
+
+    // const response = await fetch("http://localhost:5000/api/auth/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type" : "application/json"
+    //   },
+    //   body: JSON.stringify(data)
+    // });
+    // const result = await response.json();
+    // console.log(result);
+  };
+
   return (
     <div className="w-full flex justify-center">
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-[80%] sm:w-[30%] flex flex-col">
-        <div className="form-control">
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" {...register("username", {
-            required: {
-              value: true,
-              message: "Username is required",
-            }
-          })} />
-          <p className="error">{errors.username?.message}</p>
-        </div>
 
         <div className="form-control">
           <label htmlFor="email">Email</label>

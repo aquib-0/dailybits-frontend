@@ -200,9 +200,46 @@ input{
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  
 }
 
+
+img::before{
+  content: "" attr(alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-orange-100);
+  /* border: 1px solid black; */
+  border-radius: 18px;
+}
+
+.sidebar-links{
+  /* border: 1px solid black; */
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.sidebar-links::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  border: 1px solid black;
+}
+
+*::-webkit-scrollbar{
+  display: none;
+}
 
 .form-control{
   margin-bottom: 20px;
