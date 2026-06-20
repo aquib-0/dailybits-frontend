@@ -17,7 +17,7 @@ const SideBar = () => {
   const location = useLocation();
   return (
     
-        <div className="border-r w-[250px] h-[90vh] mt-[10vh] px-6 py-20 flex md:flex flex-col gap-y-5 absolute md:relative bg-white">
+        <div className="border-r w-62.5 h-[90vh] mt-[10vh] px-6 py-20 flex md:flex flex-col gap-y-5 absolute md:relative bg-white">  {/*w-[250px]*/}
           <Link to="/home" className="sidebar-links gap-x-4"><span>{location.pathname === "/home"? (<RiHome9Fill size={24} />): (<RiHome9Line size={24} />)}</span>Home</Link>
           <Link to="/library" className="sidebar-links gap-x-4"><span>{location.pathname.startsWith("/library")? (<BsBookmarksFill size={24} />) : (<BsBookmarks size={24} />)}</span>Library</Link>
           <Link to="profile" className="sidebar-links gap-x-4"><span>{location.pathname === "/profile"? (<RiUserFill size={24} />) : (<RiUserLine size={24} />)}</span>Profile</Link>

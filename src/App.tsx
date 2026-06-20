@@ -60,9 +60,9 @@ function App() {
           </Routes>
         </main>
       </div>
-      {/* <footer className="w-full h-[10vh]">
+      <footer className="w-full h-[10vh]">
         <Footer />
-      </footer> */}
+      </footer>
     </div>
   )
 }
