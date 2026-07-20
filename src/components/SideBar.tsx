@@ -47,7 +47,7 @@
 // export default SideBar
 
 
-import React from 'react';
+// import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSidebar } from '../context/SidebarContext';
 import type { IconType } from 'react-icons';
@@ -88,7 +88,7 @@ const SideBar = () => {
   return (
     <div
       className={`
-        w-[250px] h-[90vh] px-2 py-10 flex flex-col gap-y-3 
+        w-62.5 h-[90vh] px-2 py-10 flex flex-col gap-y-3
         bg-white text-gray-500 border-r z-20 overflow-x-hidden
         fixed top-[10vh] left-0
         
@@ -98,7 +98,7 @@ const SideBar = () => {
           : "-translate-x-full" /*opacity-0 invisible md:opacity-100 md:visible*/
         }
       `}
-    >
+    >  {/*w-[250px]*/}
       {NAV_ITEMS.map((item, index) => {
         if (item.isDivider) {
           return <hr key={`divider-${index}`} className="my-5 text-gray-300" />;
