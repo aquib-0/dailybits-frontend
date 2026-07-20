@@ -5,8 +5,9 @@ import { loginUser, registerUser } from "../utils/authService";
 
 interface User {
     id: number,
-    username: String,
-    email: String
+    username: string,
+    email: string,
+    user_avatar: string,
 };
 
 interface AuthContextType {
@@ -64,9 +65,11 @@ export const AuthProvider = ({children}: {children: ReactNode})=>{
 
 
     const register = async({username, email, password} : {username: String, email: String, password: String})=>{
+        console.log("Entered context register function with data: ", {username, email, password});
         const data = await registerUser(username, email, password);
+        console.log("Register context details", data);
 
-        login({email, password});
+        await login({email, password});
     };
 
 
@@ -78,6 +81,7 @@ export const AuthProvider = ({children}: {children: ReactNode})=>{
         localStorage.removeItem("token");
 
         localStorage.removeItem("user");
+
     };
 
     return (

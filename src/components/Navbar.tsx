@@ -4,9 +4,9 @@ import { useAuth } from "../context/AuthContext"
 const Navbar = () => {
     const {isAuthenticated} = useAuth();
   return (
-    <div className="w-full h-[13vh] flex justify-between items-center px-0 sm:px-8 md:px-16 border bg-transparent absolute top-0">
-        <div className="font-bold text-2xl italic">
-            <Link to="/" className="">NameOfBlog</Link>
+    <div className="w-full h-[8vh] sm:h-[13vh] flex justify-between items-center px-4 sm:px-8 md:px-10 border-orange-200 border-b bg-transparent absolute top-0">
+        <div className="font-bold text-2xl">
+            <Link to="/" className="flex items-center gap-x-3"><span className="h-full border p-0 bg-black"><img src="/dailybits_white.svg" alt="" className="w-6" /></span> DailyBits</Link>
         </div>
         <div className="hidden h-full md:flex justify-center items-center gap-x-6">
             <Link to="/about" className="">Our Story</Link>

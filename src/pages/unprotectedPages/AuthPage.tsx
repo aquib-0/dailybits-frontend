@@ -1,5 +1,5 @@
-import LoginForm from "../components/LoginForm";
-import RegisterForm from "../components/RegisterForm";
+import LoginForm from "../../components/LoginForm";
+import RegisterForm from "../../components/RegisterForm";
 
 const AuthPage = () => {
   const path = window.location.pathname;

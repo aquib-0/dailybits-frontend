@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const RegisterForm = () => {
+  const {register: reg} = useAuth();
+  const navigate = useNavigate();
   type formValue = {
       username: String,
       email: String,
@@ -20,13 +22,15 @@ const RegisterForm = () => {
     });
     const {register, handleSubmit, formState} = form;
     const {errors} = formState;
-    const onSubmit = async(data: formValue)=>{
-      const {register} = useAuth();
-      const navigate = useNavigate();
-      try{
-        await register(data);
 
-        navigate("/home");
+
+    const onSubmit = async(data: formValue)=>{
+      try{
+        console.log("OnSubmit funtion called");
+        await reg(data);
+        console.log("Navigating to '/home'");
+        
+        navigate('/home');
       } catch(error: any)
       {
         alert(error.message);
