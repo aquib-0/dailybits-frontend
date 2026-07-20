@@ -48,14 +48,14 @@ const AuthNavbar = () => {
         <div className="h-full flex justify-center items-center gap-x-2 sm:gap-x-6 relative">
             <Link to='/stories/write' className='flex items-center'><LiaEditSolid size={24} />Write</Link>
             <Link to='#' className='hidden sm:flex'><PiBellThin size={24} /></Link>
-            <div id='user_avatar' ref={(el) => { profileRefs.current[0] = el; }} onClick={()=> {setProfileOpen(!profileOpen);}} className='w-[30px] h-[30px] rounded-full border hover:cursor-pointer'>
+            <div id='user_avatar' ref={(el) => { profileRefs.current[0] = el; }} onClick={()=> {setProfileOpen(!profileOpen);}} className='w-7.5 h-7.5 rounded-full border hover:cursor-pointer'> {/*w-[30px]*/}
                 <img src={user?.user_avatar} alt={`${first_letter}`} className='w-full h-full rounded-full' />
             </div>
             {
             profileOpen && (
             <div id='hovering_profile' ref={(el) => { profileRefs.current[1] = el; }} className='w-[60vw] sm:w-[40vw] md:w-[20vw] h-auto flex flex-col items-start justify-start p-6 gap-y-8 absolute top-13 -right-4 text-sm border-gray-200 border bg-white shadow-xl'>
                 <div className='w-full flex items-center justify-start gap-x-4'>
-                    <div className='w-[50px] h-[50px] rounded-full'>
+                    <div className='w-12.4 h-12.5 rounded-full'> {/*w-[50px] h-[50px]*/}
                         <img src={user?.user_avatar} alt="" className='w-full h-auto rounded-full' />
                     </div>
                     <div className='h-full flex flex-col text-gray-500'>

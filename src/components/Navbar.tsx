@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-import { useAuth } from "../context/AuthContext"
+// import { useAuth } from "../context/AuthContext"
 
 const Navbar = () => {
-    const {isAuthenticated} = useAuth();
+    // const {isAuthenticated} = useAuth();
   return (
     <div className="w-full h-[8vh] sm:h-[13vh] flex justify-between items-center px-4 sm:px-8 md:px-10 border-orange-200 border-b bg-transparent absolute top-0">
         <div className="font-bold text-2xl">
