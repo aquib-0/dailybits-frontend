@@ -5,12 +5,13 @@ import DraftsComponent from "../../components/DraftsComponent";
 
 const ForYouPage = () => {
   const [fypPosts, setFypPosts] = useState<DraftType[] | []>([]);
-  const getFyp = async()=>{
+  
+  useEffect(()=>{
+    const getFyp = async()=>{
     const data = await fetchFypPosts();
     // console.log("Data recieved in home page:", data);
     setFypPosts(data.fyp_posts);
-  }
-  useEffect(()=>{
+    };
     getFyp();
   }, []);
   return (

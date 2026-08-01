@@ -6,17 +6,13 @@ import type { DraftType } from "../../context/DraftContext";
 const PublishedPage = () => {
   const [myPosts, setMyPosts] = useState<DraftType[] | []>([]);
 
-  const fetchPublished = async()=>{
-    const data = await getMyPublishedStories();
-    setMyPosts(data.your_posts);
-  };
   useEffect(()=>{
+    const fetchPublished = async()=>{
+      const data = await getMyPublishedStories();
+      setMyPosts(data.your_posts);
+    };
     fetchPublished();
   }, []);
-
-  // useEffect(()=>{
-  //   console.log("Value in the myPosts variable:", myPosts);
-  // }, [myPosts]);
 
   return (
     <div className='w-full flex flex-col justify-start items-start'>

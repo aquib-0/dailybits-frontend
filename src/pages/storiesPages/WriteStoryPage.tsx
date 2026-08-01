@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useSidebar } from '../../context/SidebarContext';
 import { useAuth } from '../../context/AuthContext';
 import { useDrafts, type DraftType } from '../../context/DraftContext';
+import type { Editor } from '@tiptap/react';
 
 const WriteStoryPage = () => {
   const { user } = useAuth();
@@ -11,7 +12,7 @@ const WriteStoryPage = () => {
   const { id } = useParams() || null;
   
   // Track the live editor instance directly
-  const [activeEditor, setActiveEditor] = useState<any>(null);
+  const [activeEditor, setActiveEditor] = useState<Editor | null>(null);
   const [content, setContent] = useState<string>("");
 
   const navigate = useNavigate();

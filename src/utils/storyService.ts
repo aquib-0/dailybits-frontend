@@ -7,7 +7,7 @@ export const uploadDraft =  async(draft: DraftType)=>{
         const response = await api.post("/me/stories/publish", draft);
         const data = await response.data;
         return data;
-    } catch(err: any)
+    } catch(err)
     {
         console.log("Error with the backend", err);
     }
@@ -18,7 +18,7 @@ export const fetchFypPosts = async()=>{
     try{
         const response = await api.get("/me/stories/fyp");
         const data = await response.data;
-        console.log("Data recieved in the frontend for your fyp:", data);
+        // console.log("Data recieved in the frontend for your fyp:", data);
         return data;
     } catch(error)
     {

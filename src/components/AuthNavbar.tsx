@@ -55,7 +55,7 @@ const AuthNavbar = () => {
             profileOpen && (
             <div id='hovering_profile' ref={(el) => { profileRefs.current[1] = el; }} className='w-[60vw] sm:w-[40vw] md:w-[20vw] h-auto flex flex-col items-start justify-start p-6 gap-y-8 absolute top-13 -right-4 text-sm border-gray-200 border bg-white shadow-xl'>
                 <div className='w-full flex items-center justify-start gap-x-4'>
-                    <div className='w-12.4 h-12.5 rounded-full'> {/*w-[50px] h-[50px]*/}
+                    <div className='w-12.5 h-12.5 rounded-full'> {/*w-[50px] h-[50px]*/}
                         <img src={user?.user_avatar} alt="" className='w-full h-auto rounded-full' />
                     </div>
                     <div className='h-full flex flex-col text-gray-500'>

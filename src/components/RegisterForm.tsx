@@ -7,10 +7,10 @@ const RegisterForm = () => {
   const {register: reg} = useAuth();
   const navigate = useNavigate();
   type formValue = {
-      username: String,
-      email: String,
-      password: String,
-      confirm_password: String,
+      username: string,
+      email: string,
+      password: string,
+      confirm_password: string,
     };
     const form = useForm<formValue>({
       defaultValues: {
@@ -26,28 +26,17 @@ const RegisterForm = () => {
 
     const onSubmit = async(data: formValue)=>{
       try{
-        console.log("OnSubmit funtion called");
+        // console.log("OnSubmit funtion called");
         await reg(data);
-        console.log("Navigating to '/home'");
+        // console.log("Navigating to '/home'");
         
         navigate('/home');
-      } catch(error: any)
+      } catch(error)
       {
-        alert(error.message);
+        alert(error);
       }
-      
-      // console.log(data);
-      // const res = await fetch("http://localhost:5000/api/auth/register", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json"
-      //   },
-      //   body: JSON.stringify(data)
-      // });
+    };
 
-      // const result = await res.json();
-      // console.log(result);
-    }
     return (
       <div className="w-full flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-[80%] sm:w-[30%] flex flex-col">

@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export type formValue = {
-    email: String,
-    password: String
+    email: string,
+    password: string
   };
 const LoginForm = () => {
   const {login} = useAuth();
@@ -21,24 +21,15 @@ const LoginForm = () => {
 
   const onSubmit = async(data: formValue)=>{
     try{
-      console.log(data);
+      // console.log(data);
       await login(data);
 
       navigate('/home');
-    } catch(error: any)
+    } catch(error)
     {
-      alert(error.message);
+      alert(error);
     }
-
-    // const response = await fetch("http://localhost:5000/api/auth/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type" : "application/json"
-    //   },
-    //   body: JSON.stringify(data)
-    // });
-    // const result = await response.json();
-    // console.log(result);
+  
   };
 
   return (

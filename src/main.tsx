@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
-import { AuthProvider } from './context/AuthContext.tsx'
+// import { AuthProvider } from './context/AuthContext.tsx'
+import { AuthProvider } from './context/AuthProvider.tsx'
 import { SidebarProvider } from './context/SidebarContext.tsx'
 import { DraftProvider } from './context/DraftContext.tsx'
 
