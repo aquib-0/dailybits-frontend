@@ -84,11 +84,7 @@ function App() {
             <Route path="/following" element={<ProtectedRoute><FollowingPage /></ProtectedRoute>} />
           </Routes>
         </main>
-        {
-          isAuthenticated && (
-            <div className="w-[25%] hidden md:flex justify-center items-center border-gray-300 border-l">Staff picks for you</div>
-          )
-        }
+        
       </div>
       {
         !isAuthenticated && (
