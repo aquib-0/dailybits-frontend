@@ -5,7 +5,7 @@ const AuthPage = () => {
   const path = window.location.pathname;
   console.log(path);
   return (
-    <div className='w-full h-screen flex justify-center items-center bg-[url(/about_bg.jpg)]'>
+    <div className='w-full h-screen flex justify-center items-center bg-[url(/about_bg.jpg)] relative'>
       {
         path == "/auth/login"? (<LoginForm />) : (<RegisterForm />)
       }

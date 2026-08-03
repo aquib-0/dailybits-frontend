@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export type formValue = {
     email: string,
@@ -34,7 +35,7 @@ const LoginForm = () => {
 
   return (
     <div className="w-full flex justify-center">
-      <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-[80%] sm:w-[30%] flex flex-col">
+      <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-[80%] sm:w-[36%] h-[60vh] sm:h-[80vh] flex flex-col justify-center gap-y-5 px-8 bg-white absolute bottom-24 sm:bottom-2">
 
         <div className="form-control">
           <label htmlFor="email">Email</label>
@@ -59,6 +60,8 @@ const LoginForm = () => {
         </div>
 
         <button className="submit-btn">Submit</button>
+
+        <Link to="/auth/register" className="underline">Don't have an account?</Link>
 
       </form>
     </div>

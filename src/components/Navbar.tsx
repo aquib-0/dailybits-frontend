@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
     // const {isAuthenticated} = useAuth();
   return (
-    <div className="w-full h-[8vh] sm:h-[13vh] flex justify-between items-center px-4 sm:px-8 md:px-10 border-orange-200 border-b bg-transparent absolute top-0">
+    <div className="w-full h-[8vh] sm:h-[13vh] flex justify-between items-center px-4 sm:px-8 md:px-10 border-orange-200 border-b bg-transparent absolute top-0 z-20">
         <div className="font-bold text-2xl">
             <Link to="/" className="flex items-center gap-x-3"><span className="h-full border p-0 bg-black"><img src="/dailybits_white.svg" alt="" className="w-6" /></span> DailyBits</Link>
         </div>

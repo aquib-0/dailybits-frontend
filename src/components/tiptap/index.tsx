@@ -2,6 +2,7 @@ import './styles.scss'
 
 import { TextStyleKit } from '@tiptap/extension-text-style'
 import { EditorContent, useEditor } from '@tiptap/react'
+import type { Editor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 // import Image from '@tiptap/extension-image';
 import Image from '@tiptap/extension-image';
@@ -26,7 +27,7 @@ const extensions = [
 interface TiptapProps {
   draft_id?: string
   // Pass the editor instance back up so the page can read it synchronously on click
-  onReady?: (editorInstance: any) => void 
+  onReady?: (editorInstance: Editor) => void 
   updateProps?: (content: string) => void
 }
 
@@ -73,7 +74,7 @@ const Tiptap = ({ draft_id, onReady, updateProps }: TiptapProps) => {
 
   return (
     <div className='w-full h-full prose max-w-none flex flex-col items-center'>
-      <EditorContent className='w-[80%] h-full px-2 overflow-y-scroll' editor={editor} />
+      <EditorContent className='w-[95%] sm:w-[80%] h-full px-2 overflow-y-scroll border-gray-300 border-x' editor={editor} />
       <BubbleMenu editor={editor} />
     </div>
   )

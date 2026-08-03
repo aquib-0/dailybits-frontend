@@ -241,9 +241,9 @@ img::before{
   display: none;
 }
 
-.form-control{
+/* .form-control{
   margin-bottom: 20px;
-}
+} */
 
 .error{
   color: red;
@@ -252,8 +252,10 @@ img::before{
 }
 
 .submit-btn{
-  width: 45%;
+  width: 100%;
   padding: 6px 2px;
+  background-color: black;
+  color: white;
   border: 1px solid black;
   border-radius: 12px;
 }

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
 
@@ -39,7 +39,7 @@ const RegisterForm = () => {
 
     return (
       <div className="w-full flex justify-center">
-        <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-[80%] sm:w-[30%] flex flex-col">
+        <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-[80%] sm:w-[36%] h-[80vh] flex flex-col justify-center gap-y-5 px-8 bg-white absolute bottom-2">
           <div className="form-control">
             <label htmlFor="username">Username</label>
             <input type="text" id="username" {...register("username", {
@@ -85,6 +85,8 @@ const RegisterForm = () => {
           </div>
 
           <button className="submit-btn">Submit</button>
+
+          <Link to="/auth/login" className="underline">Already have an account?</Link>
   
         </form>
       </div>

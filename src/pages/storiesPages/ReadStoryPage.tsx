@@ -15,7 +15,7 @@ const ReadStoryPage = () => {
   return (
     <div className='w-full h-screen flex flex-col justify-start items-center pt-[10vh] relative'>
         {/* <p>This is the story page and here is the story</p> */}
-        <div id='readStory' dangerouslySetInnerHTML={{__html: draft.content}} className='w-[60%] h-full overflow-y-scroll p-2' />
+        <div id='readStory' dangerouslySetInnerHTML={{__html: draft.content}} className='w-[90%] md:w-[60%] h-full overflow-y-scroll p-2' />
     </div>
   )
 }
