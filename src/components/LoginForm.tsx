@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
@@ -10,6 +10,9 @@ export type formValue = {
 const LoginForm = () => {
   const {login} = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/home";
 
   const form = useForm<formValue>({
     defaultValues: {
@@ -25,7 +28,7 @@ const LoginForm = () => {
       // console.log(data);
       await login(data);
 
-      navigate('/home');
+      navigate(from, {replace: true});
     } catch(error)
     {
       alert(error);
@@ -61,7 +64,7 @@ const LoginForm = () => {
 
         <button className="submit-btn">Submit</button>
 
-        <Link to="/auth/register" className="underline">Don't have an account?</Link>
+        <Link to="/auth/register" replace state={{from: from}} className="underline">Don't have an account?</Link>
 
       </form>
     </div>

@@ -1,11 +1,14 @@
 import { useForm } from "react-hook-form";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
 
 const RegisterForm = () => {
   const {register: reg} = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/home";
+
   type formValue = {
       username: string,
       email: string,
@@ -30,7 +33,7 @@ const RegisterForm = () => {
         await reg(data);
         // console.log("Navigating to '/home'");
         
-        navigate('/home');
+        navigate(from, {replace: true});
       } catch(error)
       {
         alert(error);

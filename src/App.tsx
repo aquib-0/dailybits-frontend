@@ -9,6 +9,7 @@ import HomePage from "./pages/homePages/HomePage";
 import ForYouPage from "./pages/homePages/ForYouPage";
 import FeaturedPage from "./pages/homePages/FeaturedPage";
 import AboutPage from "./pages/unprotectedPages/AboutPage";
+import MembershipPage from "./pages/unprotectedPages/MembershipPage";
 import AuthPage from "./pages/unprotectedPages/AuthPage";
 import LibraryPage from "./pages/LibraryPage";
 import ProfilePage from "./pages/profilePages/ProfilePage";
@@ -55,6 +56,7 @@ function App() {
               <Route path="featured" element={<FeaturedPage />} />
             </Route>
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/membership" element={<MembershipPage />} />
             <Route path="/auth/login" element={<AuthPage />} />
             <Route path="/auth/register" element={<AuthPage />} />
             <Route path="/library" element={<ProtectedRoute><LibraryPage /></ProtectedRoute>} />  {/*Contains sub-pages - your posts, your saved posts, your reading history, and responses to your comments*/}
@@ -75,8 +77,8 @@ function App() {
               
               
             </Route> */}
-            <Route path="/stories/write" element={<WriteStoryPage />} />
-            <Route path="/stories/write/:id" element={<WriteStoryPage />} />
+            <Route path="/stories/write" element={<ProtectedRoute><WriteStoryPage /></ProtectedRoute>} />
+            <Route path="/stories/write/:id" element={<ProtectedRoute><WriteStoryPage /></ProtectedRoute>} />
             <Route path="/stories/read" element={<ReadStoryPage />} />
             {/* <Route path="/stories/write/:id" element={<DynamicWrite />} /> */}
             {/* <Route path="/stories/published" element={<ProtectedRoute><PublishedPage /></ProtectedRoute>} /> */}
